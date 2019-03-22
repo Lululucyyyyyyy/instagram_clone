@@ -26,13 +26,9 @@ class Login extends React.Component {
   handleSubmit(e) {
     const context = this;
 
-    axios.post('/auth/signin', {
+    axios.post('/auth/login', {
        username: context.state.username,
        password: context.state.password,
-    })
-    .then((response) => {
-      localStorage['user'] = JSON.stringify(response.data);
-      window.location = '/dashboard';
     })
     .catch((err) => {
       console.error('Wrong Password');
@@ -41,7 +37,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <div>
         <form onSubmit={this.handleSubmit}>
           <div className="form-inputs">
             <input 
@@ -71,5 +67,6 @@ class Login extends React.Component {
     );
   }
 }
+
 
 module.exports = Login;  

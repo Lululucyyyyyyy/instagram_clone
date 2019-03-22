@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import Photo from '../Photo/index.jsx';
 
 class  Feed extends React.Component {
   constructor(props) {
@@ -10,11 +11,11 @@ class  Feed extends React.Component {
 
   componentDidMount() {
     const context = this;
-    axios.get('/pictures')
+    axios.get('/pictures/all')
     .then((images) => {
       console.log(images);
       context.setState({
-        images: images.data
+        images: images.data,
       });
     })
     .catch((err) => {
@@ -28,7 +29,9 @@ class  Feed extends React.Component {
 
     return (
       <div>
-        { images.map((image) => <img src={image}/>) }
+        <h1> Images </h1>
+        <Photo/>
+        { images.map((image) => <Photo photo={image}/>) }
      </div>
     )
   }

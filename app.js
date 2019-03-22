@@ -9,7 +9,7 @@ var session = require('express-session');
 var models = require("./models");
 
 var port = 5000;
-console.log(Object.keys(models));
+console.log('app.js line 12', Object.keys(models));
 require('./config/passport/passport.js')(passport, models.User);
 
 var routes = require('./routes/index');

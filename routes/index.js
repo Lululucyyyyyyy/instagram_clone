@@ -12,8 +12,16 @@ router.get('/', function(req, res, next) {
   return res.render('index');
 });
 
-router.get('/photos', isLoggedIn, function(req, res, next) {
+router.get('/dashboard', function(req, res, next){
+	return res.render('index');
+})
+
+router.get('/photos', function(req, res, next) {
   return res.render('index');
+});
+
+router.get('/10', function(req, res, next){
+	return res.render('index');
 });
 
 router.get('/signup', (req, res, next) => {
