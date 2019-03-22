@@ -1,4 +1,3 @@
-
 import React            from 'react';
 import axios            from 'axios';
 
@@ -29,6 +28,8 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     const context = this;
+    console.log('31');
+    e.preventDefault();
 
     axios.post('/auth/signup', {
        username: context.state.username,
@@ -38,7 +39,13 @@ class Signup extends React.Component {
        lastName: context.state.lastName
     })
     .then((response) => {
-      console.log(response);
+      console.log('response: ',response);
+    })
+    .then(() => {
+       window.location = '/dashboard'
+    })
+    .catch((err) => {
+      console.error('Error');
     })
   }
 
@@ -99,4 +106,5 @@ class Signup extends React.Component {
   }
 }
 
-module.exports = Signup;
+module.exports = Signup; 
+

@@ -11,8 +11,8 @@ class  Photo extends React.Component {
   render(){
     console.log('in here!!!');
     return (
-      <div>
-        <img src={this.props.photo} width='300'/>
+      <div className='post'>
+        <img src={this.props.photo}/>
      </div>
     )
   }

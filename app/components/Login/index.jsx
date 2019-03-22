@@ -26,9 +26,12 @@ class Login extends React.Component {
   handleSubmit(e) {
     const context = this;
 
-    axios.post('/auth/login', {
+    axios.post('/auth/signin', {
        username: context.state.username,
        password: context.state.password,
+    })
+    .then(() => {
+       window.location = '/dashboard'
     })
     .catch((err) => {
       console.error('Wrong Password');
@@ -70,3 +73,4 @@ class Login extends React.Component {
 
 
 module.exports = Login;  
+

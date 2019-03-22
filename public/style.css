@@ -1,0 +1,28 @@
+h1{
+	font-family: 'Dancing Script', cursive;
+	font-size: 72px;
+	background: -webkit-linear-gradient(#fb3958, #458eff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+body{
+	font-family: 'EB Garamond', serif;
+}
+
+img{
+	width: 299px;
+	height: 299px;
+	border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    display: block;
+    object-fit: contain;
+}
+
+.post{
+	margin: 25px;
+	padding: 50px;
+	text-align: center;
+    padding: 10px 20px;
+}
